@@ -71,6 +71,10 @@ a:hover, a:active {text-decoration: none; color:#fff;}
     align-items: center;
     height: 100%;
     .btn-area {
+      width: 24%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       a {
         display: flex;
         flex-direction: column;
@@ -81,7 +85,7 @@ a:hover, a:active {text-decoration: none; color:#fff;}
           margin-bottom: 10px;
         }
         .sub-text {
-          
+          text-align: center;
         }
       }
       .messageBtn {
@@ -96,6 +100,7 @@ a:hover, a:active {text-decoration: none; color:#fff;}
         .sub-text {
           font-size: 16px;
           color: white;
+          text-align: center;
         }
       }
     }
