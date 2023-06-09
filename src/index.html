@@ -10,6 +10,7 @@
 
   <!-- CSS -->
   <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" />
   <link rel="stylesheet" href="../static/css/main.scss" />
   <link rel="stylesheet" href="../static/css/h_f.scss" />
 
@@ -101,14 +102,16 @@
     <div class="modal-content">
       <span class="close">&times;</span>
       <h2 class="modal_totle">상담 접수</h2>
-      <form class="form-area">
+      <form class="gform pure-form pure-form-stacked form-area" method="POST" data-email="yms06034@gmail.com"
+  action="https://script.google.com/macros/s/AKfycbw1uHUSJmop33r8F_3WFmWzkvWVzE8ENgoNfawfZ1rV-kqDsee4-b9lxAVnVFIif77M/exec">
         <label for="name">이름</label>
-        <input type="text" id="name" name="name" required><br><br>
-        <label for="email">전화번호</label>
-        <input type="email" id="email" name="email" required><br><br>
+        <input type="text" id="name" name="이름" required><br><br>
+        <label for="text">전화번호</label>
+        <input type="text" id="phonenumber" name="핸드폰번호" required><br><br>
         <label for="schedule">원하시는 상담 접수일자를 선택하세요</label>
-        <input class="margin-botton" type="date" name="schedule" min="2023-06-01" max="2025-12-31" required/>
-        <input type="time">
+        <input class="margin-botton" type="date" name="상담일자" min="2023-06-01" max="2025-12-31" required/>
+        <label for="time">원하시는 상담시간을 기재해주세요</label>
+        <input name="상담시간" type="text" placeholder="ex&#41; 오후 2시" />
         <input class="submit-input" type="submit" value="제출">
         <p class="notice">위 정보는 전화상담이 끝난 후에 삭제 됩니다.</p>
       </form>
