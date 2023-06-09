@@ -6,19 +6,27 @@ a:hover, a:active {text-decoration: none; color:#fff;}
 // POPUP
 .popup {
   position: fixed;
-  top: 50%;
+  top: 5%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0%);
   background-color: #fff;
   border: 1px solid #ccc;
-  .popup-btn-area {
-    
+  width: 330px;
+  height: auto;
+  .popup_img {
+    width: 100%;
+    height: auto;
   }
-  .btn {
-    padding: 10px 15px;
-    background-color: #ccc;
-    color: #fff;
-    cursor: pointer;
+  .popup-btn-area {
+    display: flex;
+
+    .btn {
+      padding: 10px 15px;
+      background-color: black;
+      color: #fff;
+      cursor: pointer;
+      width: 50%;
+    }
   }
 }
 
