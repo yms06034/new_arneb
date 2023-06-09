@@ -1,5 +1,7 @@
 // RESET CSS
 button{background: inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer}
+a {color: #fff; text-decoration: none; outline: none}
+a:hover, a:active {text-decoration: none; color:#fff;}
 
 .popup {
   position: fixed;
@@ -65,5 +67,23 @@ button{background: inherit ; border:none; box-shadow:none; border-radius:0; padd
   background: blue;
   .btm--btn {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    .btn-area {
+      a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .icon {
+          width: 35px;
+          height: auto;
+          margin-bottom: 10px;
+        }
+        .sub-text {
+          
+        }
+      }
+    }
   }
 }
