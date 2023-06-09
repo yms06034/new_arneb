@@ -101,5 +101,26 @@ messageBtn.addEventListener('click', () => {
 });
 
 function checkM(m) {
-  location.href = 'sms:' + '01000000000' + (m == 'ios' ? '&' : '?') + 'body=' + encodeURIComponent("아르네브 분양 정보 문의합니다.")
+  location.href = 'sms:' + '01042682209' + (m == 'ios' ? '&' : '?') + 'body=' + encodeURIComponent("아르네브 분양 정보 문의합니다.")
 }
+
+
+// MODAL
+var modal = document.getElementById('modal');
+var openModalBtn = document.getElementById('openModalBtn');
+var closeModalBtn = document.getElementsByClassName('close')[0];
+
+
+openModalBtn.addEventListener('click', function() {
+  modal.style.display = 'block';
+});
+
+closeModalBtn.addEventListener('click', function() {
+  modal.style.display = 'none';
+});
+
+window.addEventListener('click', function(event) {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+});

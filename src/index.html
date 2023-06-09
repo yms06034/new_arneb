@@ -17,13 +17,13 @@
 </head>
 <body>
   <!-- HEADER -->
-  <!-- <header>
+  <header>
     <div class="header1">
-      <a class="logo-href" href="../src/test.html">
+      <a class="logo-href" href="../src/modal.html">
         <img src="https://xn--910b55cjjq9l71mr2cqsg07av1g59h.net/images/common/logo.svg" alt="logo">
       </a>
     </div>
-  </header> -->
+  </header>
 
   <!-- POPUP -->
   <div id="popup1" class="popup" data-popup-state="visible">
@@ -82,10 +82,10 @@
         </button>
       </div>
       <div class="btn-area">
-        <a href="">
+        <button id="openModalBtn" class="modalBtn">
           <img class="icon" src="../images/icon/material-symbols_edit-document-sharp.png" alt="document" />
           <p class="sub-text">상담접수</p>
-        </a>
+        </button>
       </div>
       <div class="btn-area">
         <a href="https://open.kakao.com/o/gyQhrMof">
@@ -93,6 +93,25 @@
           <p class="sub-text">부동산 무료 컨설팅</p>
         </a>
       </div>
+    </div>
+  </div>
+
+  <!-- Modal Area -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 class="modal_totle">상담 접수</h2>
+      <form class="form-area">
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">전화번호</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="schedule">원하시는 상담 접수일자를 선택하세요</label>
+        <input class="margin-botton" type="date" name="schedule" min="2023-06-01" max="2025-12-31" required/>
+        <input type="time">
+        <input class="submit-input" type="submit" value="제출">
+        <p class="notice">위 정보는 전화상담이 끝난 후에 삭제 됩니다.</p>
+      </form>
     </div>
   </div>
 
