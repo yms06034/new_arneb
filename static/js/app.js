@@ -45,3 +45,26 @@ function scrollToTop() {
 }
 scrollToTopBtn.addEventListener("click", scrollToTop);
 document.addEventListener("scroll", handleScroll);
+
+
+function checkMobile() {
+  var vUA = navigator.userAgent.toLowerCase();
+  
+  if ( vUA.indexOf("android") > -1 ) {
+    return "android";
+  } else if ( vUA.indexOf("iphone") > -1 || vUA.indexOf("ipad") > -1 || vUA.indexOf("ipod") > -1 ) {
+    return "ios";
+  } else {
+    return "other";
+  }
+}
+
+const messageBtn = document.querySelector('.messageBtn');
+
+messageBtn.addEventListener('click', () => {
+  checkM(checkMobile());
+});
+
+function checkM(m) {
+  location.href = 'sms:' + '01000000000' + (m == 'ios' ? '&' : '?') + 'body=' + encodeURIComponent("아르네브 분양 정보 문의합니다.")
+}
