@@ -17,7 +17,7 @@
   <!-- HEADER -->
   <header>
     <div class="header1">
-      <a class="logo-href" href="#">
+      <a class="logo-href" href="../src/index.html">
         <img src="https://xn--910b55cjjq9l71mr2cqsg07av1g59h.net/images/common/logo.svg" alt="logo">
       </a>
     </div>
@@ -56,31 +56,8 @@
   </div>
 
   <button class="scrollToTopBtn">
-    <img class="top-arrow-icon" src="../images/icon/top-arrow.png" alt="foat-forward" />
+    <img class="top-arrow-icon" src="../images/icon/fast-forward.png" alt="foat-forward" />
   </button>
-
-  <script>
-    var scrollToTopBtn = document.querySelector(".scrollToTopBtn");
-    var rootElement = document.documentElement;
-
-    function handleScroll() {
-      var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
-      if (rootElement.scrollTop / scrollTotal > 0.3) {
-        scrollToTopBtn.classList.add("showBtn");
-      } else {
-        scrollToTopBtn.classList.remove("showBtn");
-      }
-    }
-
-    function scrollToTop() {
-      rootElement.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    }
-    scrollToTopBtn.addEventListener("click", scrollToTop);
-    document.addEventListener("scroll", handleScroll);
-  </script>
 
   <script src="../static/js/app.js"></script>
 </body>
