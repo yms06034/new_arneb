@@ -1,4 +1,6 @@
 header {
+  position: fixed;
+  width: 100%;
   height: 90px;
   padding: 10px 30px;
   background-color: #222;
@@ -22,6 +24,42 @@ header {
   }
 }
 
-footer {
+.main-container {
+  padding-top: 110px;
+  @media(max-width: 992px) {
+    padding-top: 70px;
+  }
+  .img-content {
+    .iimg {
 
+    }
+  }
+}
+
+footer {
+  height: 100px;
+  padding: 20px 60px;
+  background-color: #222;
+  @media(max-width:992px) {
+    margin-bottom: 100px;
+  }
+  .footer-1 {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.btm-btn-area {
+  position: fixed;
+  height: 100px;
+  width: 100%;
+  bottom: 0;
+  background: blue;
+  .btm--btn {
+
+  }
 }
