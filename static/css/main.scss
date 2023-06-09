@@ -177,7 +177,7 @@ a:hover, a:active {text-decoration: none; color:#fff;}
   color: #fff;
   position: absolute;
   left: 50%;
-  top: 35%;
+  top: 38%;
   transform: translate(-50%, -50%);
   .modal_totle {
     margin-bottom: 20px;
@@ -223,4 +223,8 @@ a:hover, a:active {text-decoration: none; color:#fff;}
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.sue-text {
+  margin-top: 10px;
 }
