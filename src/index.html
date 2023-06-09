@@ -8,6 +8,9 @@
 
   <title>아르네브</title>
 
+  <!-- FAVICON -->
+  <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon" />
+
   <!-- CSS -->
   <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" />
@@ -28,7 +31,9 @@
 
   <!-- POPUP -->
   <div id="popup1" class="popup" data-popup-state="visible">
-    <img class="popup_img" src="https://앙사나레지던스여의도.net/_nuxt/img/popup1.fbb6e2d.png" alt="" />
+    <button id="openModalBtn1">
+      <img class="popup_img" src="https://앙사나레지던스여의도.net/_nuxt/img/popup1.fbb6e2d.png" alt="popup1-content" />
+    </button>
     <div class="popup-btn-area">
       <button id="hide1dayBtn1" class="btn">1일 동안 보지 않기</button>
       <button id="closeBtn1" class="btn">닫기</button>
@@ -36,7 +41,9 @@
   </div>
 
   <div id="popup2" class="popup" data-popup-state="visible">
-    <img class="popup_img" src="https://앙사나레지던스여의도.net/_nuxt/img/popup1.fbb6e2d.png" alt="" />
+    <button id="openModalBtn2">
+      <img class="popup_img" src="https://앙사나레지던스여의도.net/_nuxt/img/popup1.fbb6e2d.png" alt="popup2-content" />
+    </button>
     <div class="popup-btn-area">
       <button id="hide1dayBtn2" class="btn">1일 동안 보지 않기</button>
       <button id="closeBtn2" class="btn">닫기</button>
@@ -84,7 +91,7 @@
         </button>
       </div>
       <div class="btn-area">
-        <button id="openModalBtn" class="modalBtn">
+        <button id="openModalBtn" class="modalBtn openModalBBtn">
           <img class="icon" src="../images/icon/material-symbols_edit-document-sharp.png" alt="document" />
           <p class="sub-text">상담접수</p>
         </button>
@@ -116,7 +123,6 @@
         <input class="submit-input" type="submit" value="제출">
         <p class="notice">위 정보는 전화상담이 끝난 후에 삭제 됩니다.</p>
         <div style="display:none" class="thankyou_message">
-          <!-- You can customize the thankyou message by editing the code below -->
           <p class="sue-text">상담이 정상적으로 접수 되었습니다.</p>
           </h2>
         </div>         

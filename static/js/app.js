@@ -1,3 +1,5 @@
+
+// POPUP
 function closePopup(popupId) {
   document.getElementById(popupId).setAttribute('data-popup-state', 'hidden');
 }
@@ -110,7 +112,6 @@ var modal = document.getElementById('modal');
 var openModalBtn = document.getElementById('openModalBtn');
 var closeModalBtn = document.getElementsByClassName('close')[0];
 
-
 openModalBtn.addEventListener('click', function() {
   modal.style.display = 'block';
 });
@@ -124,3 +125,8 @@ window.addEventListener('click', function(event) {
     modal.style.display = 'none';
   }
 });
+
+
+// MODAL ON CLICK OF ADD POPUP
+var openPModal1 = document.getElementById('openModalBtn1');
+var openPModal2 = document.getElementById('openModalBtn2');
