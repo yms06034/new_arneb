@@ -3,16 +3,18 @@ button{background: inherit ; border:none; box-shadow:none; border-radius:0; padd
 a {color: #fff; text-decoration: none; outline: none}
 a:hover, a:active {text-decoration: none; color:#fff;}
 
+// POPUP
 .popup {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
-  padding: 20px;
   border: 1px solid #ccc;
+  .popup-btn-area {
+    
+  }
   .btn {
-    margin: 5px;
     padding: 10px 15px;
     background-color: #ccc;
     color: #fff;
@@ -20,6 +22,17 @@ a:hover, a:active {text-decoration: none; color:#fff;}
   }
 }
 
+
+
+#popup1[data-popup-state="hidden"] {
+  display: none;
+}
+
+#popup2[data-popup-state="hidden"] {
+  display: none;
+}
+
+// MAIN CONTAINER
 .main-container {
   .img-content {
     .iimg {
@@ -28,6 +41,7 @@ a:hover, a:active {text-decoration: none; color:#fff;}
   }
 }
 
+// SCROLLTOTOP AREA
 .scrollToTopBtn {
   background-color: black;
   color: white;
@@ -58,7 +72,7 @@ a:hover, a:active {text-decoration: none; color:#fff;}
   transform: translateY(0);
 }
 
-
+// MOBILE BTN SHOW CSS
 .btm-btn-area {
   position: fixed;
   height: 100px;

@@ -3,7 +3,6 @@
 <head>
   <title>홈페이지</title>
   <style>
-    /* 팝업 스타일링 */
     .popup {
       position: fixed;
       top: 50%;
@@ -14,7 +13,6 @@
       border: 1px solid #ccc;
     }
 
-    /* 버튼 스타일링 */
     .btn {
       margin: 5px;
       padding: 10px 15px;
@@ -22,17 +20,25 @@
       color: #fff;
       cursor: pointer;
     }
+
+    #popup1[data-popup-state="hidden"] {
+      display: none;
+    }
+
+    #popup2[data-popup-state="hidden"] {
+      display: none;
+    }
   </style>
 </head>
 <body>
-  <div id="popup1" class="popup">
+  <div id="popup1" class="popup" data-popup-state="visible">
     <h2>첫 번째 팝업</h2>
     <p>팝업 내용...</p>
     <button id="hide1dayBtn1" class="btn">1일 동안 보지 않기</button>
     <button id="closeBtn1" class="btn">닫기</button>
   </div>
 
-  <div id="popup2" class="popup">
+  <div id="popup2" class="popup" data-popup-state="visible">
     <h2>두 번째 팝업</h2>
     <p>팝업 내용...</p>
     <button id="hide1dayBtn2" class="btn">1일 동안 보지 않기</button>
@@ -41,7 +47,7 @@
 
   <script>
     function closePopup(popupId) {
-      document.getElementById(popupId).style.display = "none";
+      document.getElementById(popupId).setAttribute('data-popup-state', 'hidden');
     }
 
     function getCookie(name) {
@@ -63,8 +69,8 @@
 
     function initPopup() {
       var popup1Cookie = getCookie('popup1');
-      if (popup1Cookie !== 'hidden') {
-        document.getElementById('popup1').style.display = "block";
+      if (popup1Cookie === 'hidden') {
+        document.getElementById('popup1').setAttribute('data-popup-state', 'hidden');
       }
 
       document.getElementById('hide1dayBtn1').addEventListener('click', function() {
@@ -78,12 +84,14 @@
       });
 
       var popup2Cookie = getCookie('popup2');
-      if (popup2Cookie !== 'hidden') {
-        document.getElementById('popup2').style.display = "block";
+      if (popup2Cookie === 'hidden') {
+        document.getElementById('popup2').setAttribute('data-popup-state', 'hidden');
       }
+
 
       document.getElementById('hide1dayBtn2').addEventListener('click', function() {
         setCookie('popup2', 'hidden', 1);
+
         closePopup('popup2');
       });
 

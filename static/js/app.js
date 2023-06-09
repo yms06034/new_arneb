@@ -1,5 +1,5 @@
 function closePopup(popupId) {
-  document.getElementById(popupId).style.display = "none";
+  document.getElementById(popupId).setAttribute('data-popup-state', 'hidden');
 }
 
 function getCookie(name) {
@@ -21,8 +21,8 @@ function setCookie(name, value, days) {
 
 function initPopup() {
   var popup1Cookie = getCookie('popup1');
-  if (popup1Cookie !== 'hidden') {
-    document.getElementById('popup1').style.display = "block";
+  if (popup1Cookie === 'hidden') {
+    document.getElementById('popup1').setAttribute('data-popup-state', 'hidden');
   }
 
   document.getElementById('hide1dayBtn1').addEventListener('click', function() {
@@ -36,12 +36,14 @@ function initPopup() {
   });
 
   var popup2Cookie = getCookie('popup2');
-  if (popup2Cookie !== 'hidden') {
-    document.getElementById('popup2').style.display = "block";
+  if (popup2Cookie === 'hidden') {
+    document.getElementById('popup2').setAttribute('data-popup-state', 'hidden');
   }
+
 
   document.getElementById('hide1dayBtn2').addEventListener('click', function() {
     setCookie('popup2', 'hidden', 1);
+
     closePopup('popup2');
   });
 
@@ -53,6 +55,9 @@ function initPopup() {
 window.addEventListener('load', function() {
   initPopup();
 });
+
+
+// SCROLL TOP BTN
 var scrollToTopBtn = document.querySelector(".scrollToTopBtn");
 var rootElement = document.documentElement;
 
@@ -87,6 +92,8 @@ function checkMobile() {
   }
 }
 
+
+// MESSAGE BTN
 const messageBtn = document.querySelector('.messageBtn');
 
 messageBtn.addEventListener('click', () => {
