@@ -27,26 +27,25 @@ button{background: inherit ; border:none; box-shadow:none; border-radius:0; padd
 }
 
 .scrollToTopBtn {
-  background-color: black;
-  border: none;
+  background-color: #222;
   color: white;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 18px;
   line-height: 48px;
   width: 48px;
-
-  /* place it at the bottom right corner */
   position: fixed;
   bottom: 20px;
   right: 20px;
-  /* keep it at the top of everything else */
   z-index: 100;
-  /* hide with opacity */
   opacity: 0;
-  /* also add a translate effect */
   transform: translateY(100px);
-  /* and a transition */
   transition: all 0.5s ease;
+  display: flex;
+  padding: 10px;
+  .top-arrow-icon {
+    width: 100%;
+  }
 }
 
 .showBtn {
