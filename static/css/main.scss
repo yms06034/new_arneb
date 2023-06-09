@@ -84,6 +84,20 @@ a:hover, a:active {text-decoration: none; color:#fff;}
           
         }
       }
+      .messageBtn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .icon {
+          width: 35px;
+          height: auto;
+          margin-bottom: 10px;
+        }
+        .sub-text {
+          font-size: 16px;
+          color: white;
+        }
+      }
     }
   }
 }
