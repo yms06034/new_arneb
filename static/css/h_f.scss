@@ -1,3 +1,15 @@
 header {
-  
+  height: 90px;
+  padding: 10px 30px;
+  background-color: #222;
+  .header1 {
+    display: flex;
+    height: 100%;
+    .logo-href {
+      img {
+        width: 180px;
+        height: 100%;
+      }
+    }
+  }
 }
