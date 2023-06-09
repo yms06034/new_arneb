@@ -8,43 +8,48 @@
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 </head>
 <body>
-  <div id="new_pop" style="width:fit-content;height:100%;position:absolute;" > 
-    <img style="" src="../images/icon/fast-forward.png"/> 
-      <div style="width:100%;height:20px;position:relative;"> 
-          <a href="javascript:void(0);" onclick="exit2()" style="font-weight: bold; position: absolute; right:60px;">하루동안 보지 않기</a>
-          <a href="javascript:void(0);" onclick="exit()" style="font-weight: bold; position: absolute; right: 10px;">X</a> 
-      </div> 
-  </div>
+  <aside class="popup" id="popupWrap">
+    <div class="inner" id="popup_1">
+      <div class="area">
+        <img src="" alt="배너이미지1">
+      </div>
+      <button type="button" onClick="PopupNoDisplay_1()"><span>하루동안 보지않기</span></button>
+      <button type="button" onClick="PopupHide();">[닫기]</button>
+    </div>
+  
+    <div class="popupbg" style="background:gray;"></div>
+  </aside>
 
   <script> 
-    $(document).ready(function(){ 
-        cookiedata = document.cookie; 
-          if(cookiedata.indexOf("close=Y")<0){ 
-            $("#new_pop").show(); 
-          }else{ 
-            $("#new_pop").hide(); 
-          } 
-      }); 
-      
-      function exit(){ 
-        if($("input[name=layer_close]").is(":checked") == true){ 
-            setCookie("close","Y",1); 
-          } 
-          
-          $("#new_pop").hide(); 
-      } 
-      
-      function exit2(){ 
-        $("#new_pop").hide(); 
-          setCookie("close","Y",1); 
-      } 
-      
-      function setCookie(cname, cvalue, exdays) { 
-        var d = new Date(); 
-          d.setTime(d.getTime() + (exdays*24*60*60*1000)); //시간설정 
-          var expires = "expires="+d.toUTCString(); var temp = cname + "=" + cvalue + "; " + expires; 
-          document.cookie = temp; 
-      } 
+    $(document).ready(function () {
+      $('.popup').show();
+      cookiedata = document.cookie;
+      if ( cookiedata.indexOf("popup_1=done") < 0 ){ //쿠키 변경 여부 불러오기
+        document.all['popup_1'].style.visibility = "visible";
+      }
+      else {
+        document.all['popup_1'].style.display = "none";
+      }
+      PopupBgDisplay();
+    });
+
+    function PopupNoDisplay_1() {
+      setCookie("popup_1", "done", 1); //쿠키값 변경
+      PopupHide();
+    }
+
+    function PopupHide() { //팝업창 지우기
+      $('#popup_1').hide();
+      PopupBgDisplay(); 
+    }
+
+    function PopupBgDisplay() {	//팝업창이 없어진 경우 배경(popupbg) 지우기
+      cookiedata1 = document.cookie;
+      if (cookiedata1.indexOf("popup_1=done") > 0)
+      {
+        $("#popupWrap").hide();
+      }
+    }
   </script>
 </body>
 </html>
