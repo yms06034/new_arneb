@@ -10,22 +10,25 @@ a:hover, a:active {text-decoration: none; color:#fff;}
   left: 50%;
   transform: translate(-50%, 0%);
   background-color: #fff;
-  border: 1px solid #ccc;
   width: 330px;
   height: auto;
+  display: flex;
+  flex-direction: column;
   .popup_img {
     width: 100%;
     height: auto;
   }
   .popup-btn-area {
     display: flex;
-
     .btn {
       padding: 10px 15px;
-      background-color: black;
+      background-color: #222;
       color: #fff;
       cursor: pointer;
       width: 50%;
+      &:last-child {
+        border-left: 1px solid #fff;
+      }
     }
   }
 }
