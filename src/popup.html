@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>홈페이지</title>
+  <style>
+    /* 팝업 스타일링 */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+
+    /* 버튼 스타일링 */
+    .btn {
+      margin: 5px;
+      padding: 10px 15px;
+      background-color: #ccc;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="popup1" class="popup">
+    <h2>첫 번째 팝업</h2>
+    <p>팝업 내용...</p>
+    <button id="hide1dayBtn1" class="btn">1일 동안 보지 않기</button>
+    <button id="closeBtn1" class="btn">닫기</button>
+  </div>
+
+  <div id="popup2" class="popup">
+    <h2>두 번째 팝업</h2>
+    <p>팝업 내용...</p>
+    <button id="hide1dayBtn2" class="btn">1일 동안 보지 않기</button>
+    <button id="closeBtn2" class="btn">닫기</button>
+  </div>
+
+  <script>
+    function closePopup(popupId) {
+      document.getElementById(popupId).style.display = "none";
+    }
+
+    function getCookie(name) {
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.indexOf(name + '=') === 0) {
+          return cookie.substring(name.length + 1);
+        }
+      }
+      return null;
+    }
+
+    function setCookie(name, value, days) {
+      var expirationDate = new Date();
+      expirationDate.setDate(expirationDate.getDate() + days);
+      document.cookie = name + '=' + value + '; expires=' + expirationDate.toUTCString() + '; path=/;';
+    }
+
+    function initPopup() {
+      var popup1Cookie = getCookie('popup1');
+      if (popup1Cookie !== 'hidden') {
+        document.getElementById('popup1').style.display = "block";
+      }
+
+      document.getElementById('hide1dayBtn1').addEventListener('click', function() {
+        setCookie('popup1', 'hidden', 1);
+
+        closePopup('popup1');
+      });
+
+      document.getElementById('closeBtn1').addEventListener('click', function() {
+        closePopup('popup1');
+      });
+
+      var popup2Cookie = getCookie('popup2');
+      if (popup2Cookie !== 'hidden') {
+        document.getElementById('popup2').style.display = "block";
+      }
+
+      document.getElementById('hide1dayBtn2').addEventListener('click', function() {
+        setCookie('popup2', 'hidden', 1);
+        closePopup('popup2');
+      });
+
+      document.getElementById('closeBtn2').addEventListener('click', function() {
+        closePopup('popup2');
+      });
+    }
+
+    window.addEventListener('load', function() {
+      initPopup();
+    });
+  </script>
+</body>
+</html>
