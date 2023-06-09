@@ -1,4 +1,5 @@
 {
+  "homepage": "https://yms06034.github.io/Arneb_webpage",
   "name": "sj_por",
   "version": "1.0.0",
   "description": "",
@@ -6,18 +7,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html",
+    "predeploy": "npm run build",
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "parcel-bundler": "^1.12.5",
     "sass": "^1.58.3"
-  },
-  "dependencies": {
-    "gh-pages": "^5.0.0"
   }
 }
-
-
