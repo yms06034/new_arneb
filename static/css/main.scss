@@ -46,9 +46,24 @@ button{background: inherit ; border:none; box-shadow:none; border-radius:0; padd
   .top-arrow-icon {
     width: 100%;
   }
+  @media(max-width: 992px) {
+    display: none;
+  }
 }
 
 .showBtn {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+.btm-btn-area {
+  position: fixed;
+  height: 120px;
+  width: 100%;
+  bottom: 0;
+  background: blue;
+  .btm--btn {
+    display: flex;
+  }
 }
