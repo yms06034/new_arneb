@@ -229,3 +229,18 @@ a:hover, a:active {text-decoration: none; color:#fff;}
 .sue-text {
   margin-top: 10px;
 }
+
+
+.area {
+  width: 1000px;
+  margin: 0 auto;
+  .area_a {
+    display: flex;
+    flex-direction: column;
+    .top_text {
+      color: #5bb9a4;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+  }
+}
